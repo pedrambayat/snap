@@ -1,0 +1,111 @@
+# MBER Design Summary
+# This file contains key metrics and information about the design run.
+# Generated automatically by mber.utils.yaml_summary_utils
+
+# Metadata about this design run
+metadata:
+  timestamp: 2026-01-04 08:55:22
+  protocol: VHH_binder_design
+  version: 1.0.0
+
+# Configuration parameters used for this run
+config:
+  trajectory:
+    optimizer_type: schedule_free_sgd
+    optimizer_learning_rate: 0.4
+    optimizer_b1: 0.9
+    optimizer_b2: 0.999
+    soft_iters: 65
+    temp_iters: 25
+    hard_iters: 0
+    pssm_iters: 10
+
+# Information about the template used for design
+template:
+  target_id: P15391
+  target_name: CD19
+  region: A:20-291
+  hotspots: A54,A56,A66,A115
+  masked_sequence: EVQLVESGGGLVQPGGSLRLSCAASG*********WFRQAPGKEREF***********NADSVKGRFTISRDNAKNTLYLQMNSLRAEDTAVYYC************WGQGTLVTVSS
+  binder_length: 118
+  timings:
+    timings:
+      Initialize folding model: 4.484618902206421
+    setup: 4.65091347694397
+    run: 7.470738172531128
+    teardown: 0.1912071704864502
+
+# Trajectory optimization results
+trajectory:
+  seed: 5896319
+  completed: true
+  metrics:
+    best_loss: -2.6221508979797363
+    best_iptm: 0.5958830118179321
+    best_ptm_energy: .inf
+  timings:
+    timings:
+      Initialize AF model: 15.151498079299927
+      Setup models: 15.151612758636475
+      Setup trajectory: 0.34235715866088867
+      Setup optimizer: 0.0016093254089355469
+      Setup loss: 1.9073486328125e-05
+      Precompile model: 40.214576959609985
+      Update design state: 6.523077964782715
+    run: 416.08655405044556
+    teardown: 6.52324366569519
+  step_timings:
+    timings:
+      Design logits phase: 416.0864872932434
+  sequences:
+  - EVQLVESGGGLVQPGGSLRLSCAASGFDFSSYCMSWFRQAPGKEREFLASIYFSGLTLNADSVKGRFTISRDNAKNTLYLQMNSLRAEDTAVYYCARSPWVPWFPDHWGQGTLVTVSS
+  - EVQLVESGGGLVQPGGSLRLSCAASGFDFSSYCMSWFRQAPGKEREFLASIYFSGLTLNADSVKGRFTISRDNAKNTLYLQMNSLRAEDTAVYYCARSPWVPDFPDHWGQGTLVTVSS
+  - EVQLVESGGGLVQPGGSLRLSCAASGFDFSSYCMSWFRQAPGKEREPLASIMFSGLTLNADSVKGRFTISRDNAKNTLYLQMNSLRAEDTAVYYCARSPWVPDFPDHWGQGTLVTVSS
+
+# Evaluation results
+evaluation:
+  completed: true
+  timings:
+    timings:
+      Initialize AF complex model: 3.026088237762451
+      Initialize ESM model: 0.6839802265167236
+      Initialize monomer folding model: 0.8686437606811523
+      Setup models: 4.578974008560181
+      Setup evaluation parameters: 0.07154273986816406
+      Setup loss functions: 1.7881393432617188e-05
+      Update design state: 3.218650817871094e-05
+    run: 91.60712671279907
+    teardown: 0.00014901161193847656
+  metrics:
+    best_iptm: 0.17785701155662537
+    best_plddt: 0.818519189953804
+    best_ptm_energy: .inf
+  best_binder:
+    sequence: EVQLVESGGGLVQPGGSLRLSCAASGFDFSSYCMSWFRQAPGKEREPLASIMFSGLTLNADSVKGRFTISRDNAKNTLYLQMNSLRAEDTAVYYCARSPWVPDFPDHWGQGTLVTVSS
+    i_ptm: 0.17522720992565155
+    plddt: 0.818519189953804
+    i_pae: 0.7684406638145447
+    esm_score: -35.03549822693458
+    quality_score: 1.1689736098051071
+    ptm_energy: null
+    hbond: null
+    salt_bridge: null
+  binders:
+  - sequence: EVQLVESGGGLVQPGGSLRLSCAASGFDFSSYCMSWFRQAPGKEREFLASIYFSGLTLNADSVKGRFTISRDNAKNTLYLQMNSLRAEDTAVYYCARSPWVPWFPDHWGQGTLVTVSS
+    i_ptm: 0.14424294233322144
+    plddt: 0.7917827665805817
+    i_pae: 0.8023958206176758
+    esm_score: -28.185593564412557
+  - sequence: EVQLVESGGGLVQPGGSLRLSCAASGFDFSSYCMSWFRQAPGKEREFLASIYFSGLTLNADSVKGRFTISRDNAKNTLYLQMNSLRAEDTAVYYCARSPWVPDFPDHWGQGTLVTVSS
+    i_ptm: 0.17785701155662537
+    plddt: 0.7903414219617844
+    i_pae: 0.7734256982803345
+    esm_score: -27.202953054045793
+  - sequence: EVQLVESGGGLVQPGGSLRLSCAASGFDFSSYCMSWFRQAPGKEREPLASIMFSGLTLNADSVKGRFTISRDNAKNTLYLQMNSLRAEDTAVYYCARSPWVPDFPDHWGQGTLVTVSS
+    i_ptm: 0.17522720992565155
+    plddt: 0.818519189953804
+    i_pae: 0.7684406638145447
+    esm_score: -35.03549822693458
+
+# Total design runtime in seconds
+total_runtime: 526.5299322605133
