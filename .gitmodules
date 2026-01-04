@@ -1,0 +1,3 @@
+[submodule "mber-open"]
+	path = mber-open
+	url = https://github.com/manifoldbio/mber-open.git
