@@ -1,8 +1,8 @@
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-INPUT_DIR="$SCRIPT_DIR/fasta"
-OUTPUT_DIR="$SCRIPT_DIR/colabfold_results"
+INPUT_DIR="$SCRIPT_DIR/fasta/chl1_with_exon8"
+OUTPUT_DIR="$SCRIPT_DIR/pdb/chl1_with_exon8"
 mkdir -p $OUTPUT_DIR
 
 # Set environment variables for large proteins to prevent OOM (Out of Memory)
@@ -16,7 +16,7 @@ export PATH="$HOME/localcolabfold/localcolabfold/colabfold-conda/bin:$PATH"
 # --use-gpu-relax: Uses CUDA for the Amber relaxation step (much faster)
 # --num-recycle: Increased to 12 for the complex domain architecture of CHL1
 colabfold_batch \
-    --num-recycle 12 \
+    --num-recycle 4 \
     --model-type alphafold2_ptm \
     --amber \
     --use-gpu-relax \
